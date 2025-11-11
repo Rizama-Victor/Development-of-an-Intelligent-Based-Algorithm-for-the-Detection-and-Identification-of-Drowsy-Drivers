@@ -21,3 +21,22 @@ Drowsiness remains a major cause of road accidents as many drivers fail to recog
   
 ## 🧰 Tools and Technologies Used
 
+| **Tool/Libraries** | **Purpose in the Project**                                                                                                                     |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Python**         | Served as the primary programming language for implementing the drowsiness detection algorithm and training the deep learning model.           |
+| **OpenCV**         | Used for image and video frame processing, including face and eye region detection, as well as feature extraction from real-time camera input. |
+| **YOLOv8**         | Implemented for real-time detection of facial features and cues associated with driver drowsiness, such as eye closure and yawning.            |
+| **Ultralytics**    | Provided the YOLOv8 framework used for model training, fine-tuning, and real-time inferencing on the drowsiness dataset.                       |
+| **PyTorch**        | Served as the deep learning backend for building, training, and evaluating the neural network model.                                           |
+| **TorchVision**    | Used to support model operations, dataset loading, and image transformations during training and testing phases.                               |
+| **Google Colab**   | Offered GPU-accelerated cloud resources for training the deep learning model and conducting experiments efficiently.                           |
+| **Roboflow**       | Utilized for dataset hosting, annotation, augmentation, and preprocessing to improve model training quality.                                   |
+| **Display**        | Used to visualize training progress, test results, and detection outputs within the notebook environment.                                      |
+| **Image**          | Enabled handling and representation of image data as Python objects for processing and display.                                                |
+| **Shutil**         | Used for organizing and managing image and video files during dataset preparation and testing.                                                 |
+| **CSV**            | Used to store and manage detection results, such as bounding box coordinates and classification outputs, in structured format.                 |
+| **Codecs**         | Supported encoding and decoding of video data during the processing of real-time driver footage.                                               |
+
+---
+
+## 🧠 Model Building and Development
