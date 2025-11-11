@@ -40,3 +40,58 @@ Drowsiness remains a major cause of road accidents as many drivers fail to recog
 ---
 
 ## 🧠 Model Building and Development
+
+### Data Acquisition
+
+A dataset comprising 18,140 images of drivers was collected, featuring different states of a driver such as `happy`, `Neutral`, `Eyes closed`, `Heavy Eyes`,  `Yawn` and `Bent Neck`. These images were sourced from online platforms such as Roboflow, Kaggle, Google Datasets, and YouTube. The class distribution of images by driver state is shown below:
+
+| **Class**    | **Image Number** | 
+|---------------|------------|
+| Eye Closed    | 3299       | 
+| Bent Neck     | 11         | 
+| Heavy Eyes    | 3908       |
+| Yawn          | 2886       |  
+| Happy         | 111        |
+| Neutral       | 7925       |   
+| **Total**     |  **18140** |
+
+### Data Cleaning and Structuring
+
+To properly prepare the data for further use, the 18,140 images were adequately cleaned and sorted into different sections based on the condition of the driver by removal of blurred images or images of low resolution, irrelevant images that did not depict any drowsy symptoms etc. 
+
+Furthermore, due to the minimal representation of the `Bent Neck` category (11 images), it was appropriately excluded from the dataset to avoid negatively affecting the dataset leaving the resulting amount to 18,129 images. The remaining data was re-organized into four symptom categories: `yawn`, `eyes closed`, and `heavy eyes` indicating drowsiness while `eyes opened` category predominantly represented non-drowsiness. This is because the initial `neutral` and `happy` sections were merged to collectively
+represent non-drowsy symptoms. 
+ 
+The inclusion of the non-drowsy symptoms i.e negative (-ve) samples was essential for improving the model’s robustness and overall performance. By integrating these negative categories, it made it possible for the model to differentiate between drowsy and non-drowsy drivers which improved its generalization capabilities and detection accuracy.
+
+### 🏷️ Labelling and Annotation
+
+Annotation was carried out using LabelImg, an open-source graphical tool for labeling images with bounding boxes in the YOLO format. The dataset, consisting of 18,129 images, was carefully annotated to capture facial cues related to drowsiness. Each time an object was labeled, the tool automatically generated a corresponding .txt file containing the bounding box parameters and class information.
+
+Each annotated image included the following parameters:
+
+**Class ID:** Represents the category of the detected facial feature (e.g., drowsy, non-drowsy, yawning, eyes closed).
+
+**x:** X-coordinate of the bounding box’s top-left corner (horizontal start).
+
+**y:** Y-coordinate of the bounding box’s top-left corner (vertical start).
+
+**w:** Width of the bounding box in pixels.
+
+**h:** Height of the bounding box in pixels.
+
+These annotations provided the precise positional and categorical data required for the model to identify and localize drowsiness-related features within each image.
+
+### Data Preparation
+
+The specific data preparation technique used was class Balancing, implemented to maintain a balanced representation of all classes. Specifically, the number of instances for each class label was standardized to roughly 6,000 samples per class. This balance reduced the chances of the model being biased by ensuring an even distribution of weights across the different class categories (i.e yawn, eyes closed, eyes opened etc).
+
+###  Data Pre-processing 
+- **Auto-Orientation:** This ensured all images were displayed correctly regardless of their initial orientation during capture.
+- **Image Resizing:** Resized Images to 640 X 640 pixels to align with YOLOv8 architecture for faster GPU training while retaining essential image details.
+
+### Train-Test-Validation
+
+Due to the large size of the dataset, the training, testing, and validation split was a ratio of 90:5:5 after preprocessing and augmentation.
+
+### Model Training
