@@ -1,7 +1,6 @@
 # Development of an Intelligent Based Algorithm for the Detection and Identification of Drowsy 💤 Drivers 🚗
 
-This repository contains the implementation of my research titled ""Development of an Intelligent-based Algorithm for the Detection and Identification of Drowsy Drivers: Preventive Mechanism for 
-Road Accident.", published as a conference proceeding in the  21st International Conference and Exhibition on Power and Telecommunications (ICEPT 2025), Nigerian Institute of Electrical and Electronic Engineers (NIEEE), authored by Akinde O. K., Olaleye T. A., Ibitoye M. O., Taiwo S., Adetona M. O. & Rizama V.
+This repository contains the implementation of my research titled _"Development of an Intelligent-based Algorithm for the Detection and Identification of Drowsy Drivers: Preventive Mechanism for Road Accident."_, published as a conference proceeding in the  21st International Conference and Exhibition on Power and Telecommunications (ICEPT 2025), Nigerian Institute of Electrical and Electronic Engineers (NIEEE), authored by Akinde O. K., Olaleye T. A., Ibitoye M. O., Taiwo S., Adetona M. O. & Rizama V.
 
 ---
 
