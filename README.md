@@ -86,12 +86,68 @@ These annotations provided the precise positional and categorical data required 
 
 The specific data preparation technique used was class Balancing, implemented to maintain a balanced representation of all classes. Specifically, the number of instances for each class label was standardized to roughly 6,000 samples per class. This balance reduced the chances of the model being biased by ensuring an even distribution of weights across the different class categories (i.e yawn, eyes closed, eyes opened etc).
 
-###  Data Pre-processing 
+###  Data Pre-processing and Augnentation 
+
+#### Pereprocessing Techniques
+
 - **Auto-Orientation:** This ensured all images were displayed correctly regardless of their initial orientation during capture.
 - **Image Resizing:** Resized Images to 640 X 640 pixels to align with YOLOv8 architecture for faster GPU training while retaining essential image details.
 
-### Train-Test-Validation
+#### Augmentation Techniques 
 
-Due to the large size of the dataset, the training, testing, and validation split was a ratio of 90:5:5 after preprocessing and augmentation.
+- **Horizontal Flips:** Flipped Images along the vertical axis to create mirrowed versions to enable the model recognize drowsy drivers regardless of their left-to-right orientation.
+
+**Note:** The augmentation process resulted in an increase in the number of images from 18,129 to 20,927 images. The augmented dataset was then randomly shuffled and splitted into training, test and validation sets to help improve generalization, reduce bias and improve the overall performance.
+
+### Train-Validation-Test Split
+
+Due to the large size of the dataset, the training, testing, and validation split was a ratio of 90:5:5 after preprocessing and augmentation. The training set (18,835 images) served as the largest subset and was used to train the YOLOv8 model, enabling it to learn essential patterns, features, and relationships between inputs and labels. The validation set (1046 images) was used during training to monitor performance on unseen data, fine-tune hyperparameters, and prevent overfitting. Finally, the testing set (1046 images) was reserved for the final model evaluation, providing an unbiased measure of its accuracy, robustness, and generalization to real-world scenarios.
 
 ### Model Training
+
+The training procedure for the model involved mounting the drive in the Google colab virtual environment, installing the ultralytics library, importing YOLO, importing the dataset from the google drive, and finally training the model. The training time lasted for a total of  8.805 hours.
+
+### 🤖 Model Summary
+
+| Hyperparameter | Value |
+|------------------------|---------------------------|
+| Number of Epochs | 100 |
+| Learning Rate | 0.01 |
+| Image Input Size | 640 x 640 |
+| Total Number of Classes | 6 |
+| Batch Size | 16 |
+| Activation Function | SiLU |
+| Momentum | 0.937 |
+| IoU Threshold | 0.7 |
+| Optimizer | auto (AdamW at initial layers for early convergence and SGD at final layers for fine tuning) |
+
+### Evaluation Metrics
+
+| **Metric**      | **Value** | **Remarks**                                                                                                          |
+| --------------- | --------- | -------------------------------------------------------------------------------------------------------------------- |
+| **Precision**   | 0.895     | The model accurately identified most drowsiness cues (e.g., eye closure, yawning) with few false detections.         |
+| **Recall**      | 0.914     | Demonstrated high sensitivity, successfully detecting the majority of drowsy facial cues across test samples.        |
+| **mAP@50**      | 0.952     | Showed strong detection accuracy at a relaxed IoU threshold (50%), indicating reliable recognition of drowsy signs.  |
+| **mAP@50-95**   | 0.763     | Reflected consistent performance across varying IoU thresholds, showing robust generalization to unseen faces.       |
+| **F1-Score**    | 0.900     | Balanced trade-off between precision and recall, suggesting dependable overall drowsiness detection capability.      |
+| **Box Loss**    | 0.732     | Indicated moderate localization error, showing the model could further refine bounding box placement on facial cues. |
+| **Object Loss** | 0.400     | Demonstrated effective differentiation of drowsy and non-drowsy symptoms, with minimal classification errors.        |
+
+### Demo Video
+
+### Result Plots
+<p align="center">
+    <img src="results.png" alt="The Model's Result Summary" width="1500"/>
+    <br>
+    <em> Fig 2: The Model's Result Summary</em>
+</p>
+
+<p align="center">
+    <img src="confusion_matrix.png" alt="The Confusion matrix" width="1500"/>
+    <br>
+    <em> Fig 3: Confusion Matrix</em>
+</p>
+
+
+## 📌 Note
+Please kindly note that this README file is a summarized version of the full implementation of this research. The complete implementation can be accessed via the [program script](Driver_Drowsiness_Detection_System_Using_YOLO.ipynb). Dataset and Model Weights can be provided upon request.
