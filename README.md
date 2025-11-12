@@ -30,7 +30,9 @@ Drowsiness remains a major cause of road accidents as many drivers fail to recog
 | **PyTorch**        | Served as the deep learning backend for building, training, and evaluating the neural network model.                                           |
 | **TorchVision**    | Used to support model operations, dataset loading, and image transformations during training and testing phases.                               |
 | **Google Colab**   | Offered GPU-accelerated cloud resources for training the deep learning model and conducting experiments efficiently.                           |
-| **Roboflow**       | Utilized for dataset hosting, annotation, augmentation, and preprocessing to improve model training quality.                                   |
+| **Roboflow**       | Utilized for dataset augmentation, and preprocessing to improve model training quality.                                   |
+| **LabelImg**       | Utilized for dataset annotation/labelling.                                   |
+| **Google Drive**       | Used for hosting the dataset.                                   |
 | **Display**        | Used to visualize training progress, test results, and detection outputs within the notebook environment.                                      |
 | **Image**          | Enabled handling and representation of image data as Python objects for processing and display.                                                |
 | **Shutil**         | Used for organizing and managing image and video files during dataset preparation and testing.                                                 |
@@ -141,6 +143,7 @@ The training procedure for the model involved mounting the drive in the Google c
     <em> A Snip Video Clip of the Model's Performance on a Test Video</em>
 </p>
 
+**Note:** For the full test video showing detections for all classes, kindly [chick here](https://stfutminnaedung-my.sharepoint.com/:f:/g/personal/victor_m1901621_st_futminna_edu_ng/Er9QjNH2vntDjOi3TBZlHqQBt31NZODcDm0YpgTE7y7byA?e=d1nciu).
 
 ### Result Plots
 <p align="center">
@@ -155,6 +158,20 @@ The training procedure for the model involved mounting the drive in the Google c
     <em> Fig 3: Confusion Matrix</em>
 </p>
 
+## 💡 Key Insights
+
+- The research addressed the key limitations of existing driver drowsiness detection systems, which typically only determined whether a driver was drowsy or not without identifying the specific symptoms responsible for that classification. It achieved this by classifying drowsy symptoms such as `yawn`, `eyes closed`, and `heavy eyes`, and not drowsy symptoms such as `eyes open` in addition to the overall `drowsy` and `not drowsy` detections.
+- The model demonstrated reliable detection performance under varied lighting conditions (both bright and dark) and from multiple viewing angles, including front, left, right, and rear views of the driver.
+
+---
+
+## 🔮Future Work
+Future work could focus on combining the model with other sensor-based modalities such as eye-tracking, head pose estimation, or steering behavior analysis to create a multi-modal driver monitoring system. This hybrid approach would improve detection accuracy by validating visual cues (like yawning or eye closure) with physiological or behavioral signals, making the system more adept to lighting conditions, camera angles, and driver variability.
+
+---
 
 ## 📌 Note
+
 Please kindly note that this README file is a summarized version of the full implementation of this research. The complete implementation can be accessed via the [program script](Driver_Drowsiness_Detection_System_Using_YOLO.ipynb). Dataset and Model Weights can be provided upon request.
+
+---
