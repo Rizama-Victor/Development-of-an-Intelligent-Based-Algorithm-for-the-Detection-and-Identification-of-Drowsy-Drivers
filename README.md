@@ -143,7 +143,7 @@ The training procedure for the model involved mounting the drive in the Google c
     <em> A Snip Video Clip of the Model's Performance on a Test Video</em>
 </p>
 
-**Note:** For the full test video showing detections for all classes, kindly [chick here](https://stfutminnaedung-my.sharepoint.com/:f:/g/personal/victor_m1901621_st_futminna_edu_ng/Er9QjNH2vntDjOi3TBZlHqQBt31NZODcDm0YpgTE7y7byA?e=d1nciu)
+**Note:** For the full test video showing detections for all classes, kindly [chick here](https://stfutminnaedung-my.sharepoint.com/:f:/g/personal/victor_m1901621_st_futminna_edu_ng/Er9QjNH2vntDjOi3TBZlHqQBt31NZODcDm0YpgTE7y7byA?e=d1nciu).
 
 ### Result Plots
 <p align="center">
