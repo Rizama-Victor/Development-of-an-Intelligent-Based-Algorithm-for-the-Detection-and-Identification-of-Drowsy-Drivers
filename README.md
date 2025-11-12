@@ -59,7 +59,7 @@ A dataset comprising 18,140 images of drivers was collected, featuring different
 
 ### Data Cleaning and Structuring
 
-To properly prepare the data for further use, the 18,140 images were adequately cleaned and sorted into different sections based on the condition of the driver by removal of blurred images or images of low resolution, irrelevant images that did not depict any drowsy symptoms etc. 
+To properly structure the data for further use, the 18,140 images were adequately cleaned and sorted into different sections based on the condition of the driver by removal of blurred images or images of low resolution, irrelevant images that did not depict any drowsy symptoms etc. 
 
 Furthermore, due to the minimal representation of the `Bent Neck` category (11 images), it was appropriately excluded from the dataset to avoid negatively affecting the dataset leaving the resulting amount to 18,129 images. The remaining data was re-organized into four symptom categories: `yawn`, `eyes closed`, and `heavy eyes` indicating drowsiness while `eyes opened` category predominantly represented non-drowsiness. This is because the initial `neutral` and `happy` sections were merged to collectively
 represent non-drowsy symptoms. 
