@@ -133,7 +133,14 @@ The training procedure for the model involved mounting the drive in the Google c
 | **Box Loss**    | 0.732     | Indicated moderate localization error, showing the model could further refine bounding box placement on facial cues. |
 | **Object Loss** | 0.400     | Demonstrated effective differentiation of drowsy and non-drowsy symptoms, with minimal classification errors.        |
 
-### Demo Video
+### 🎥 Demo 
+
+<p align="center">
+    <img src="Demo/demo.gif" alt="A short video clip of the Model's Performance on a Test Video" width="1500"/>
+    <br>
+    <em> A Snip Video Clip of the Model's Performance on a Test Video</em>
+</p>
+
 
 ### Result Plots
 <p align="center">
