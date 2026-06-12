@@ -1,6 +1,6 @@
 # Development of an Intelligent Based Algorithm for the Detection and Identification of Drowsy 💤 Drivers 🚗
 
-This repository contains the implementation of my research titled [_"An Intelligent-based Algorithm for Determining Drowsy Drivers and Prevention of Road Accidents."_](https://journals.uniosun.edu.ng/ujees/article/view/456), published in the Uniosun Journal of Engineering and Environmental Sciences, authored by Akinde O. K., Olaleye T. A., Ibitoye M. O., Rizama V. S., Taiwo S., & Adetona M. O.
+This repository contains the implementation of my research titled [_"An Intelligent-based Algorithm for Determining Drowsy Drivers and Prevention of Road Accidents."_](https://journals.uniosun.edu.ng/ujees/article/view/456), published in the Uniosun Journal of Engineering and Environmental Sciences, and authored by Akinde O. K., Olaleye T. A., Ibitoye M. O., Rizama V. S., Taiwo S., & Adetona M. O.
 
 ---
 
